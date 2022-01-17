@@ -17,7 +17,7 @@ body {
     grid-template-rows: auto 1fr;
     width: 100%;
     min-height: 100vh;
-    place-items: center center;
+    place-items: center;
 }
 
 header {
@@ -41,9 +41,17 @@ main {
 }
 .insult {
     display: inline-block;
-    height: 1em;
-    font-size: 3rem;
+    min-height: 1.75em;
+    width: min-content;
+    font-size: 1.75rem;
+    font-size: clamp(1.75rem, 1.4rem + 1.7500000000000002vw, 3.5rem);
     text-shadow: -2px 2px 5px white;
     border-bottom: 5px solid rgb(0, 208, 223);
-    padding-bottom: 2em;
+    text-align: center;
+}
+
+@media only screen and (min-width: 25em) {
+    .insult {
+        width: max-content;
+    }
 }
