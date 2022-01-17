@@ -15,7 +15,7 @@ fs.readFile("./data/nouns.json", { encoding: "utf-8" }, (err, data) => {
 
 fs.readFile("./data/adverbs.json", { encoding: "utf-8" }, (err, data) => {
     if(err) console.log(err)
-    nouns = JSON.parse(data)
+    adverbs = JSON.parse(data)
 })
 
 const fetchRouter = express.Router()
