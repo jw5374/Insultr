@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/fetchData.js" defer></script>
+    <title>Insultr</title>
 </head>
 <body>
-    <a href="/other">Hello World</a>
+    <div class="grid-container">
+        <header></header>
+        <main>
+            <div>You</div>
+            <span class="insult"></span>
+            <div class="wordselect">
+                <button id="adverbspin">Adverb</button>
+                <button id="adjectivespin">Adjective</button>
+                <button id="nounspin">Noun</button>
+            </div>
+            <button id="insultspin">Spin</button>
+        </main>
+    </div>
 </body>
 </html>
