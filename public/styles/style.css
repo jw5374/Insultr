@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -41,15 +43,71 @@ main {
     width: 100%;
 }
 
+button {
+    outline: none;
+}
+
 .logoImg {
     position: relative;
-    width: 8vw;
+    width: 10ch;
     padding: 0.5em;
 }
 
 .wordselect {
+    display: flex;
+    gap: 1em;
     flex-direction: row;
     justify-content: center;
+    perspective: 1000px;
+}
+
+.buttonstyle {
+    position: relative;
+    padding: 0.75em;
+    border-radius: 0.75em;
+    text-align: center;
+    box-shadow: 
+        -2px -2px 5px rgb(0, 208, 223),
+        2px 2px 5px slategrey;
+    cursor: pointer;
+}
+
+.buttonstyle.wordbutton {
+    width: max-content;
+    transition: .15s ease-in-out;
+    border: 0.25em solid darkslategray;
+}
+
+.spinoutline {
+    position: relative;
+    width: 20ch;
+    height: 3em;
+    border-radius: 0.75em;
+    border: 0.25em solid darkslategray;
+}
+
+.buttonstyle.insultbutton {
+    position: absolute;
+    width: 102%;
+    height: 110%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    background-color: rgb(214, 214, 214);
+    box-shadow: 
+        -3px -3px 5px rgb(0, 208, 223),
+        4px 12px 15px black;
+    transition: 75ms ease-in-out;
+    cursor: pointer;
+}
+
+.buttonstyle.insultbutton:hover {
+    background-color: white;
+}
+
+.buttonstyle.insultbutton:active {
+    transform: translate(-50%, -50%);
+    box-shadow: none;
 }
 
 .insult {
@@ -67,4 +125,45 @@ main {
     .insult {
         width: max-content;
     }
+
+    .buttonstyle.wordbutton {
+        width: 12ch;
+        transform-style: preserve-3d;
+        transform: translateY(-30px) rotateX(90deg);
+        transition: .25s ease-in-out;
+        border: 0.25em solid darkslategray;
+    }
+    
+    .buttonstyle.wordbutton::after {
+        content: "Spin Part";
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        inset: -8px;
+        border-radius: 0.75em;
+        background-color: black;
+        color: white;
+        border: 0.25em solid darkslategray;
+        box-shadow: 
+            -2px -2px 5px rgb(0, 208, 223),
+            2px 2px 5px slategrey;
+    }
+    
+    .buttonstyle.wordbutton::after {
+        transform: rotateX(-90deg) translateZ(25px) translateY(25px);
+    }
+    
+    .buttonstyle.wordbutton:hover {
+        transform: rotateX(0deg);
+    }
+    
+    .buttonstyle.wordbutton:hover::after {
+        inset: 0;
+    }
+    
+    .buttonstyle.wordbutton:hover:active {
+        background-color: grey;
+    }
+
 }
