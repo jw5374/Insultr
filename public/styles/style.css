@@ -15,8 +15,9 @@ body {
     display: grid;
     grid-template-areas: 
         "header"
-        "main";
-    grid-template-rows: auto 1fr;
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
     width: 100%;
     min-height: 100vh;
     place-items: center;
@@ -43,8 +44,29 @@ main {
     width: 100%;
 }
 
+footer {
+    grid-area: footer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 1em;
+    padding-block: 1em;
+}
+
 button {
     outline: none;
+}
+
+.linkstyle {
+    text-decoration: none;
+    color: grey;
+    transition: 0.25s ease-in-out;
+}
+
+.linkstyle:hover {
+    color: white;
+    text-shadow: 0 0 3px grey;
 }
 
 .logoImg {
